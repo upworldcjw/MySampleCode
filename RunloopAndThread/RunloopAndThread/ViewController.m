@@ -61,8 +61,14 @@
         }
         [runLoop addPort:self.emptyPort forMode:NSDefaultRunLoopMode];
         // 下面这两种写法都不可取
+//test1
 //        [runLoop run];
+
+//test2,应该是个while
         [runLoop runMode:NSRunLoopCommonModes beforeDate:[NSDate distantFuture]];
+        //while (_shouldKeepRunning && [runLoop runMode:NSRunLoopCommonModes beforeDate:[NSDate distantFuture]]);
+        
+//test3
 //        CFRunLoopRun();
         NSLog(@"run over");
     }
