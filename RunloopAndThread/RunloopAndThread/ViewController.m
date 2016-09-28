@@ -64,9 +64,11 @@
 //test1
 //        [runLoop run];
 
-//test2,应该是个while
-        [runLoop runMode:NSRunLoopCommonModes beforeDate:[NSDate distantFuture]];
-        //while (_shouldKeepRunning && [runLoop runMode:NSRunLoopCommonModes beforeDate:[NSDate distantFuture]]);
+//test2
+        [runLoop runUntilDate:[NSDate distantFuture]];
+        //导致线程快速退出，故会奔溃。
+//        [runLoop runMode:NSRunLoopCommonModes beforeDate:[NSDate distantFuture]];
+        //或者while (_shouldKeepRunning && [runLoop runMode:NSRunLoopCommonModes beforeDate:[NSDate distantFuture]]);
         
 //test3
 //        CFRunLoopRun();
